@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portfolio-intelligence"
+version = "2.6.0"
+description = "Portfolio Intelligence - Reports Dashboard PySide6"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "openpyxl>=3.1",
+    "pypdf>=4.0",
+    "pdfplumber>=0.10",
+    "matplotlib>=3.8",
+    "PySide6>=6.6",
+    "reportlab>=4.0",
+]
+
+[project.scripts]
+portfolio-intelligence = "portfolio_intelligence.cli:main"
+portfolio-intelligence-gui = "portfolio_intelligence.gui.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
