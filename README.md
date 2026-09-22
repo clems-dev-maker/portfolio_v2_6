@@ -1,76 +1,177 @@
-# Portfolio Intelligence v2.6 — Reports Dashboard
+# 📊 Portfolio Intelligence v2.6 — Reports Dashboard
 
-Version desktop PySide6 centrée sur le reporting professionnel.
+Application desktop développée avec **Python** et **PySide6**, dédiée à l'analyse et au reporting de portefeuille.
 
-## Nouveautés v2.6
+La version v2.6 est centrée sur la génération de rapports professionnels aux formats **Excel** et **PDF**.
 
-- Génération simultanée du rapport Excel et du rapport PDF.
-- Nouveau module `reports/pdf.py` avec synthèse patrimoniale prête à partager.
-- Cartes Dashboard dédiées aux rapports : Excel, PDF, statut.
-- Bouton `Ouvrir PDF` dans l’interface graphique.
-- Export PDF structuré : synthèse, performance, risque, allocations, look-through, stress tests, méthodologie.
-- Conservation des modules v2.5 : Analytics, Performance, Risk et Look-through.
+---
 
-## Installation
+## ✨ Nouveautés v2.6
+
+- Génération simultanée du rapport Excel et du rapport PDF
+- Nouveau module `reports/pdf.py` dédié à la génération du rapport PDF
+- Synthèse patrimoniale prête à partager
+- Cartes Dashboard dédiées aux rapports : Excel, PDF et statut
+- Bouton `Ouvrir PDF` intégré à l'interface graphique
+- Export PDF structuré comprenant :
+  - Synthèse
+  - Performance
+  - Risque
+  - Allocations
+  - Look-through
+  - Stress tests
+  - Méthodologie
+- Conservation des modules de la version v2.5 :
+  - Analytics
+  - Performance
+  - Risk
+  - Look-through
+
+---
+
+## 🛠️ Technologies utilisées
+
+- Python
+- PySide6
+- Excel
+- PDF
+- Analyse de portefeuille
+- Reporting patrimonial
+
+---
+
+## 📦 Installation
+
+### 1. Créer un environnement virtuel
 
 ```bash
 python -m venv .venv
-source .venv/Scripts/activate
+2. Activer l'environnement virtuel
+Windows
+.venv\Scripts\activate
+Linux / macOS
+source .venv/bin/activate
+3. Mettre à jour les outils Python
 python -m pip install --upgrade pip setuptools wheel
+4. Installer les dépendances
 pip install -r requirements.txt
+5. Installer le projet en mode développement
 pip install -e .
-```
+⚠️ Problème potentiel avec PySide6 sous Windows
 
-Sous Windows, si PySide6 échoue à cause des chemins longs, place le projet dans un chemin court, par exemple :
+Si PySide6 échoue à cause des chemins longs, place le projet dans un chemin court.
 
-```text
+Exemple :
+
 C:\dev\portfolio_v2_6
-```
+📥 Préparer les fichiers d'import
 
-## Préparer les imports
+Place les fichiers nécessaires dans le dossier :
 
-Place tes fichiers ici :
+data/imports/
 
-```text
+Les fichiers attendus sont :
+
 data/imports/transactions.csv
 data/imports/valeur_nette.pdf
-```
+🖥️ Lancer l'interface graphique
 
-## Lancer l’interface graphique
+Depuis la racine du projet :
 
-```bash
 python main.py gui
-```
 
-Puis clique sur :
+Dans l'interface graphique, clique ensuite sur :
 
-```text
 Analyser et générer Excel + PDF
-```
 
-Les rapports seront générés ici :
+Les rapports seront générés automatiquement dans :
 
-```text
 data/exports/rapport_portefeuille.xlsx
 data/exports/rapport_portefeuille.pdf
-```
+💻 Utilisation en ligne de commande
 
-## Utilisation CLI
+Le projet peut également être utilisé depuis la ligne de commande.
 
-```bash
+Analyse standard
 python main.py analyze
-```
-
-Avec chemins personnalisés :
-
-```bash
+Analyse avec chemins personnalisés
 python main.py analyze \
   --transactions "data/imports/transactions.csv" \
   --net-worth "data/imports/valeur_nette.pdf" \
   --output "data/exports/rapport_portefeuille.xlsx" \
   --pdf-output "data/exports/rapport_portefeuille.pdf"
-```
+📂 Structure du projet
+portfolio_v2_6/
+│
+├── data/
+│   ├── imports/
+│   │   ├── transactions.csv
+│   │   └── valeur_nette.pdf
+│   │
+│   └── exports/
+│       ├── rapport_portefeuille.xlsx
+│       └── rapport_portefeuille.pdf
+│
+├── src/
+│   └── portfolio_intelligence/
+│       ├── analytics/
+│       ├── performance/
+│       ├── risk/
+│       ├── lookthrough/
+│       └── reports/
+│           └── pdf.py
+│
+├── tests/
+│
+├── main.py
+├── pyproject.toml
+├── requirements.txt
+├── .gitignore
+└── README.md
+📊 Reporting
 
-## Limites
+La version v2.6 permet de générer deux formats de rapport complémentaires.
 
-Les métriques de performance, risque et look-through restent des estimations. Le PDF est une synthèse de pilotage patrimonial ; l’Excel conserve le détail complet des données.
+📗 Rapport Excel
+
+Le rapport Excel conserve le détail complet des données et des analyses.
+
+Fichier généré :
+
+data/exports/rapport_portefeuille.xlsx
+📄 Rapport PDF
+
+Le rapport PDF fournit une synthèse structurée destinée au pilotage patrimonial et au partage.
+
+Il comprend notamment :
+
+Synthèse patrimoniale
+Performance
+Risque
+Allocations
+Look-through
+Stress tests
+Méthodologie
+
+Fichier généré :
+
+data/exports/rapport_portefeuille.pdf
+⚠️ Limites
+
+Les métriques de performance, de risque et de look-through restent des estimations.
+
+Le rapport PDF constitue une synthèse de pilotage patrimonial.
+
+Le rapport Excel conserve le détail complet des données.
+
+Les résultats doivent donc être interprétés comme des outils d'analyse et de reporting et non comme des données financières certifiées.
+
+👨‍💻 Auteur
+
+Clément Cathala
+
+GitHub : https://github.com/clems-dev-maker
+
+📄 Licence
+
+Projet distribué sous licence MIT.
